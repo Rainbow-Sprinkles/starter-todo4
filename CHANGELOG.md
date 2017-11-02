@@ -5,7 +5,10 @@ All notable changes to this project will be documented in this file.
    - Changes are grouped by commit date in descending order.
    - Oldest changes come first within each group but the order don't really matter.
 
-# [latest version 1.0.0]
+# [latest version 2.0.0]
+
+## [3.0.0] - 2017-11-02
+ - Integrated PHPUnit for unit test.
 
 ## [version 2.0.0 released] - 2017-10-20
 
