@@ -1,6 +1,12 @@
 <?php
 use PHPUnit\Framework\TestCase;
 
+/**
+ * This unit test plan is to test against Task entity model.
+ * It basically includes the following tests:
+ * 1) the assignment of each member properties with reasonable test inputs and
+ *    expected outputs.
+ */
 class TaskTest extends TestCase
 {
     private $CI;
