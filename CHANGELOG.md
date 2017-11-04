@@ -9,6 +9,7 @@ All notable changes to this project will be documented in this file.
 
 ## [3.0.0] - 2017-11-02
  - Integrated PHPUnit for unit test.
+ - Create a unit test plan for task entity.
 
 ## [version 2.0.0 released] - 2017-10-20
 
