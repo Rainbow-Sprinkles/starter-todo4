@@ -11,6 +11,7 @@ All notable changes to this project will be documented in this file.
  - Added TaskListTest.php to test incomplete tasks compared to completed tasks.
  - Updated phpunit.xml.dist to generate code coverage reports.
  - Updated .gitignore to ignore generated code coverage reports.
+ - Added .travis.yml to enable Travis-CI to perform unit test for every push to repo.
 
 ## [3.0.0] - 2017-11-02
  - Integrated PHPUnit for unit test.
