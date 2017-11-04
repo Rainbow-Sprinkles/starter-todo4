@@ -36,3 +36,6 @@ application/logs/*
 composer.phar
 composer.exe
 composer.lock
+
+#Tests Reports
+/tests/report

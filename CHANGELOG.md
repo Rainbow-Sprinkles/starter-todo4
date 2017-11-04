@@ -7,6 +7,11 @@ All notable changes to this project will be documented in this file.
 
 # [latest version 2.0.0]
 
+## [3.0.0] - 2017-11-04
+ - Added TaskListTest.php to test incomplete tasks compared to completed tasks.
+ - Updated phpunit.xml.dist to generate code coverage reports.
+ - Updated .gitignore to ignore generated code coverage reports.
+
 ## [3.0.0] - 2017-11-02
  - Integrated PHPUnit for unit test.
  - Create a unit test plan for task entity.
