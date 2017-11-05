@@ -30,3 +30,10 @@ application/logs/*
 # tmp folder
 /tmp/
 
+#PHP Composer if it's put inside the project
+composer.phar
+composer.exe
+composer.lock
+
+#Tests Reports
+/tests/report
