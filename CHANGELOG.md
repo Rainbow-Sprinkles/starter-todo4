@@ -11,6 +11,8 @@ All notable changes to this project will be documented in this file.
  - Added an XML documents as data source.
  - Added XML_Model.php
  - Enabled XML_Model to save data into an XML data file.
+ - Enabled XML_Model to load data from an XML data file.
+ - Updated Tasks.php model to use tasks.xml file.
 
 ## [version 3.0.0 released] - 2017-11-04
 
