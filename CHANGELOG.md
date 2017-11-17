@@ -5,7 +5,9 @@ All notable changes to this project will be documented in this file.
    - Changes are grouped by commit date in descending order.
    - Oldest changes come first within each group but the order don't really matter.
 
-# [latest version 3.0.0]
+# [latest version 4.0.0]
+
+## [version 4.0.0 released] - 2017-11-16
 
 ## [4.0.0] - 2017-11-16
  - Added an XML documents as data source.
