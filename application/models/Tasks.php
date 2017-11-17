@@ -2,14 +2,14 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Tasks extends CSV_Model {
+class Tasks extends XML_Model {
 
         /**
          * Ctor
          */
         public function __construct()
         {
-                parent::__construct(APPPATH . DATAPATH.'tasks.csv', 'id');
+                parent::__construct(APPPATH . DATAPATH.'tasks.xml', 'id');
         }
         
         /**
