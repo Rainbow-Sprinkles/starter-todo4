@@ -13,9 +13,11 @@ class XML_Model extends Memory_Model
 //  Housekeeping methods
 //---------------------------------------------------------------------------
 
-	/**
+    protected $xml = null;
+    
+    /**
 	 * Constructor.
-	 * @param string $origin Filename of the CSV file
+	 * @param string $origin Filename of the XML file
 	 * @param string $keyfield  Name of the primary key field
 	 * @param string $entity	Entity name meaningful to the persistence
 	 */
@@ -35,7 +37,7 @@ class XML_Model extends Memory_Model
 
 		// start with an empty collection
 		$this->_data = array(); // an array of objects
-		$this->fields = array(); // an array of strings
+		$this->_fields = array(); // an array of strings
 		// and populate the collection
 		$this->load();
 	}
@@ -47,29 +49,33 @@ class XML_Model extends Memory_Model
 	protected function load()
 	{
 		//---------------------
-		if (($handle = fopen($this->_origin, "r")) !== FALSE)
-		{
-			$first = true;
-			while (($data = fgetcsv($handle)) !== FALSE)
-			{
-				if ($first)
-				{
-					// populate field names from first row
-					$this->_fields = $data;
-					$first = false;
-				}
-				else
-				{
-					// build object from a row
-					$record = new stdClass();
-					for ($i = 0; $i < count($this->_fields); $i ++ )
-						$record->{$this->_fields[$i]} = $data[$i];
-					$key = $record->{$this->_keyfield};
-					$this->_data[$key] = $record;
-				}
-			}
-			fclose($handle);
-		}
+                $this->xml = simplexml_load_file($this->_origin);
+                
+                // Have all the field names even if file is empty
+                $this->_fields[] = 'id';
+                $this->_fields[] = 'task';
+                $this->_fields[] = 'priority';
+                $this->_fields[] = 'size';
+                $this->_fields[] = 'group';
+                $this->_fields[] = 'deadlines';
+                $this->_fields[] = 'status';
+                $this->_fields[] = 'flag';
+                
+                foreach ($this->xml->tasks->item as $item)
+                {   
+                    $record = new stdClass();
+                    $record->id = (int) $item->id;
+                    $record->task = (string) $item->task;
+                    $record->priority = (int) $item->priority;
+                    $record->size = (int) $item->size;
+                    $record->group = (int) $item->group;
+                    $record->deadline = (string) $item->deadline;
+                    $record->status = (int) $item->status;
+                    $record->flag = (int) $item->flag;
+                    $this->_data[$record->id] = $record;
+                }
+                
+                
 		// --------------------
 		// rebuild the keys table
 		$this->reindex();
