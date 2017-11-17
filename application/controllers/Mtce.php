@@ -134,7 +134,13 @@ class Mtce extends Application {
         {
             if (empty($task->id))
             {
-                                $task->id = $this->tasks->highest() + 1;
+                $task->id = $this->tasks->highest() + 1;
+                if(empty($task->deadline)){
+                    $task->deadline = "NULL";
+                }
+                if(empty($task->flag)){
+                    $task->flag = 0;
+                }
                 $this->tasks->add($task);
                 $this->alert('Task ' . $task->id . ' added', 'success');
             } else
