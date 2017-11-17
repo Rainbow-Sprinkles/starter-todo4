@@ -86,10 +86,14 @@ class XML_Model extends Memory_Model
 		//---------------------
 		if (($handle = fopen($this->_origin, "w")) !== FALSE)
 		{
-			fputcsv($handle, $this->_fields);
-			foreach ($this->_data as $key => $record)
-				fputcsv($handle, array_values((array) $record));
-			fclose($handle);
+                    //save it with appropriate indentations
+                    $dom = new DOMDocument('1.0', 'utf-8');
+                    $dom->preserveWhiteSpace = false;
+                    $dom->formatOutput = true;
+                    $dom->loadXML($this->xml->asXML());
+
+                    fputs($handle, $dom->saveXML());
+                    fclose($handle);
 		}
 		// --------------------
 	}
