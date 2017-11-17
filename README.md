@@ -1,5 +1,5 @@
 # starter-todo
-Starter project for COMP4711 Lab 7, Fall 2017
+Starter project for COMP4711 Lab 8, Fall 2017
 
 This lab builds on the web app from Lab 5, Lab6, and Lab 7.
 
