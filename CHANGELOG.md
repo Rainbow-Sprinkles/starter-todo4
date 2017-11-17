@@ -9,6 +9,7 @@ All notable changes to this project will be documented in this file.
 
 ## [4.0.0] - 2017-11-16
  - Added an XML documents as data source.
+ - Added XML_Model.php
 
 ## [version 3.0.0 released] - 2017-11-04
 
